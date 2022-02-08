@@ -52,7 +52,7 @@ export const getWordOfDay = () => {
   const random = new Random(seed)
   
   const index = random.nextInt(0, WORDS.length)
-  const nextday = (index + 1) * msInDay + epochMs
+  const nextday = (seed + 1) * msInDay + epochMs
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
