@@ -30,6 +30,18 @@ export const Keyboard = ({
     }
   }
 
+  const createKeys = (value: string) => {
+    return (value.split('').map((key) => (
+      <Key
+        value={key}
+        key={key}
+        onClick={onClick}
+        status={charStatuses[key]}
+        isRevealing={isRevealing}
+      />
+    )))
+  }
+
   //useEffect(() => {
   //  const listener = (e: KeyboardEvent) => {
   //    if (e.code === 'Enter') {
@@ -52,204 +64,52 @@ export const Keyboard = ({
   return (
     <div>
       <div className="flex justify-center mb-1">
-        {"アイウエオ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("アイウエオ")}
 		&emsp;
-        {"ハヒフヘホ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ハヒフヘホ")}
 		&emsp;
-        {"ガギグゲゴ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ガギグゲゴ")}
       </div>
       <div className="flex justify-center mb-1">
-        {"カキクケコ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("カキクケコ")}
 		&emsp;
-        {"マミムメモ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("マミムメモ")}
 		&emsp;
-        {"ザジズゼゾ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ザジズゼゾ")}
       </div>
       <div className="flex justify-center mb-1">
-        {"サシスセソ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("サシスセソ")}
 		&emsp;
-        {"ヤーユ ヨ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ヤーユ ヨ")}
 		&emsp;
-        {"ダヂヅデド".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ダヂヅデド")}
       </div>
       <div className="flex justify-center mb-1">
-        {"タチツテト".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("タチツテト")}
 		&emsp;
-        {"ラリルレロ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ラリルレロ")}
 		&emsp;
-        {"バビブベボ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("バビブベボ")}
       </div>
       <div className="flex justify-center mb-1">
-        {"ナニヌネノ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ナニヌネノ")}
 		&emsp;
-        {"ワヰヱヲン".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ワヰヱヲン")}
 		&emsp;
-        {"パピプペポ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("パピプペポ")}
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
           {ENTER_TEXT}
         </Key>
 		&emsp;
-        {"ヴ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ヴ")}
 		&emsp;
-        {"ァィゥェォ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ァィゥェォ")}
 		&emsp;
-        {"ッ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ッ")}
 		&emsp;
-        {"ャュョ".split('').map((key) => (
-          <Key
-            value={key}
-            key={key}
-            onClick={onClick}
-            status={charStatuses[key]}
-            isRevealing={isRevealing}
-          />
-        ))}
+        {createKeys("ャュョ")}
 		&emsp;
         <Key width={65.4} value="DELETE" onClick={onClick}>
           {DELETE_TEXT}

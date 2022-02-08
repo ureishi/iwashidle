@@ -6,7 +6,9 @@ import { MAX_CHALLENGES } from '../constants/settings'
 export const shareStatus = (guesses: string[], lost: boolean) => {
   navigator.clipboard.writeText(
     `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}\n\n` +
-      generateEmojiGrid(guesses)
+      generateEmojiGrid(guesses) +
+	  '\n' +
+	  'https://t-ne.x0.to/iwashidle/'
   )
 }
 

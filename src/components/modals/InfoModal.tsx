@@ -1,5 +1,6 @@
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
+import { MAX_CHALLENGES } from '../../constants/settings'
 
 type Props = {
   isOpen: boolean
@@ -10,7 +11,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="遊び方" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        6回の推測で答えの鰯を当てます。
+	    {MAX_CHALLENGES}回の推測で答えの鰯を当てます。
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
