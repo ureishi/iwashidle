@@ -8,43 +8,57 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="遊び方" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        6回の推測で答えの鰯を当てます。
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="W" status="correct" />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="ウ" />
+        <Cell value="ル" />
+        <Cell value="メ" />
+        <Cell value="イ" status="correct" />
+        <Cell value="ワ" status="correct" />
+        <Cell value="シ" status="correct" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        イとワとシは答えの鰯に含まれ、位置も一致しています。
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
-        <Cell value="L" status="present" />
-        <Cell value="O" />
-        <Cell value="T" />
+        <Cell value="マ" />
+        <Cell value="ウ" status="present" />
+        <Cell value="ル" />
+        <Cell value="イ" />
+        <Cell value="ワ" />
+        <Cell value="シ" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        ウは答えの鰯に含まれますが位置は異なります。
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell value="U" status="absent" />
-        <Cell value="E" />
+        <Cell value="コ" />
+        <Cell value="ノ" />
+        <Cell value="ハ" status="absent" />
+        <Cell value="イ" />
+        <Cell value="ワ" />
+        <Cell value="シ" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        ハは答えの鰯に含まれません。
+      </p>
+
+      <div className="flex justify-center mb-1 mt-4">
+        <Cell value="イ" status="correct" />
+        <Cell value="ト" status="correct" />
+        <Cell value="イ" status="correct" />
+        <Cell value="ワ" status="correct" />
+        <Cell value="シ" status="correct" />
+        <Cell value=" " status="correct" />
+      </div>
+      <p className="text-sm text-gray-500 dark:text-gray-300">
+        3,4,5文字の鰯が答えになる場合もあります。その時は最後が空白になります。
       </p>
     </BaseModal>
   )
