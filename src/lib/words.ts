@@ -48,14 +48,15 @@ export const getWordOfDay = () => {
   const now = Date.now()
   const msInDay = 86400000
   
-  const seed = Math.floor((now - epochMs) / msInDay) // 任意のシード値を決める
-  const random = new Random(seed)
+  const index = Math.floor((now - epochMs) / msInDay)
   
-  const index = random.nextInt(0, WORDS.length)
-  const nextday = (seed + 1) * msInDay + epochMs
+  const random = new Random(index)
+  const idx = random.nextInt(0, WORDS.length)
+  
+  const nextday = (index + 1) * msInDay + epochMs
 
   return {
-    solution: WORDS[index % WORDS.length].toUpperCase(),
+    solution: WORDS[idx].toUpperCase(),
     solutionIndex: index,
     tomorrow: nextday,
   }
