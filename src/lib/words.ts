@@ -12,8 +12,8 @@ export const isWinningWord = (word: string) => {
   return solution === word
 }
 
+//reference: https://neos21.net/blog/2021/12/27-01.html
 class Random {
-  //reference: https://neos21.net/blog/2021/12/27-01.html
   x: number
   y: number
   z: number

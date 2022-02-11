@@ -7,8 +7,10 @@ export const NOT_ENOUGH_LETTERS_MESSAGE = '文字数が不足しています'
 export const WORD_NOT_FOUND_MESSAGE = 'そんな鰯はいません'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `今日の鰯は ${solution} でした。`
-export const ENTER_TEXT = 'Enter'
-export const DELETE_TEXT = 'Delete'
+//export const ENTER_TEXT = 'Enter'
+export const ENTER_TEXT = 'Enter ⏎'
+//export const DELETE_TEXT = 'Delete'
+export const DELETE_TEXT = '⌫'
 export const STATISTICS_TITLE = '統計'
 export const GUESS_DISTRIBUTION_TEXT = 'ヒストグラム'
 export const NEW_WORD_TEXT = '次の鰯まであと'

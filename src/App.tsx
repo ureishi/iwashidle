@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   InformationCircleIcon,
   ChartBarIcon,
@@ -21,6 +22,7 @@ import {
   CORRECT_WORD_MESSAGE,
 } from './constants/strings'
 import {
+  MIN_WORD_LENGTH,
   MAX_WORD_LENGTH,
   MAX_CHALLENGES,
   ALERT_TIME_MS,
@@ -121,6 +123,16 @@ function App() {
     }
   }
 
+  const onStr = (value: string) => {
+    if (
+      currentGuess.length + value.length <= MAX_WORD_LENGTH &&
+      guesses.length < MAX_CHALLENGES &&
+      !isGameWon
+    ) {
+      setCurrentGuess(`${currentGuess}${value}`)
+    }
+  }
+
   const onDelete = () => {
     setCurrentGuess(currentGuess.slice(0, -1))
   }
@@ -129,7 +141,8 @@ function App() {
     if (isGameWon || isGameLost) {
       return
     }
-    if (!(currentGuess.length === MAX_WORD_LENGTH)) {
+
+    if (currentGuess.length < MIN_WORD_LENGTH) {
       setIsNotEnoughLetters(true)
       return setTimeout(() => {
         setIsNotEnoughLetters(false)
@@ -148,12 +161,13 @@ function App() {
     // chars have been revealed
     setTimeout(() => {
       setIsRevealing(false)
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+    }, REVEAL_TIME_MS * currentGuess.length)
 
     const winningWord = isWinningWord(currentGuess)
 
     if (
-      currentGuess.length === MAX_WORD_LENGTH &&
+      currentGuess.length >= MIN_WORD_LENGTH &&
+      currentGuess.length <= MAX_WORD_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
@@ -198,12 +212,18 @@ function App() {
           onClick={() => setIsStatsModalOpen(true)}
         />
       </div>
+      <div className="flex w-80 mx-auto justify-center mb-2 mt-2">
+        <p className="text-center text-base dark:text-white">
+          {"今日のイワシは" + solution.length + "文字"}
+        </p>
+      </div>
       <Grid
         guesses={guesses}
         currentGuess={currentGuess}
         isRevealing={isRevealing}
       />
       <Keyboard
+        onStr={onStr}
         onChar={onChar}
         onDelete={onDelete}
         onEnter={onEnter}
