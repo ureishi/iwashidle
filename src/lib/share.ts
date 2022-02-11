@@ -8,7 +8,7 @@ export const shareStatus = (guesses: string[], lost: boolean) => {
     `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}\n\n` +
       generateEmojiGrid(guesses) +
 	  '\n' +
-	  'https://t-ne.x0.to/iwashidle/'
+	  '<https://t-ne.x0.to/iwashidle/>'
   )
 }
 
