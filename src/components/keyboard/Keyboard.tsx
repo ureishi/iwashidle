@@ -65,52 +65,52 @@ export const Keyboard = ({
     <div>
       <div className="flex justify-center mb-1">
         {createKeys("アイウエオ")}
-		&emsp;
+		&ensp;
         {createKeys("ハヒフヘホ")}
-		&emsp;
+		&ensp;
         {createKeys("ガギグゲゴ")}
       </div>
       <div className="flex justify-center mb-1">
         {createKeys("カキクケコ")}
-		&emsp;
+		&ensp;
         {createKeys("マミムメモ")}
-		&emsp;
+		&ensp;
         {createKeys("ザジズゼゾ")}
       </div>
       <div className="flex justify-center mb-1">
         {createKeys("サシスセソ")}
-		&emsp;
+		&ensp;
         {createKeys("ヤーユ ヨ")}
-		&emsp;
+		&ensp;
         {createKeys("ダヂヅデド")}
       </div>
       <div className="flex justify-center mb-1">
         {createKeys("タチツテト")}
-		&emsp;
+		&ensp;
         {createKeys("ラリルレロ")}
-		&emsp;
+		&ensp;
         {createKeys("バビブベボ")}
       </div>
       <div className="flex justify-center mb-1">
         {createKeys("ナニヌネノ")}
-		&emsp;
+		&ensp;
         {createKeys("ワヰヱヲン")}
-		&emsp;
+		&ensp;
         {createKeys("パピプペポ")}
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
           {ENTER_TEXT}
         </Key>
-		&emsp;
+		&ensp;
         {createKeys("ヴ")}
-		&emsp;
+		&ensp;
         {createKeys("ァィゥェォ")}
-		&emsp;
+		&ensp;
         {createKeys("ッ")}
-		&emsp;
+		&ensp;
         {createKeys("ャュョ")}
-		&emsp;
+		&ensp;
         <Key width={65.4} value="DELETE" onClick={onClick}>
           {DELETE_TEXT}
         </Key>
