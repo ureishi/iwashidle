@@ -3,12 +3,15 @@ import { solutionIndex } from './words'
 import { GAME_TITLE } from '../constants/strings'
 import { MAX_CHALLENGES } from '../constants/settings'
 
-export const shareStatus = (guesses: string[], lost: boolean) => {
+export const shareStatus = (
+  guesses: string[],
+  lost: boolean,
+  isHardMode: boolean
+) => {
   navigator.clipboard.writeText(
-    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}\n\n` +
-      generateEmojiGrid(guesses) +
-	  '\n' +
-	  '<https://t-ne.x0.to/iwashidle/>'
+    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}${
+      isHardMode ? '*' : ''
+    }\n\n` + generateEmojiGrid(guesses)
   )
 }
 
@@ -25,6 +28,9 @@ export const generateEmojiGrid = (guesses: string[]) => {
             case 'present':
               return '🟨'
             default:
+              if (localStorage.getItem('theme') === 'dark') {
+                return '⬛'
+              }
               return '⬜'
           }
         })

@@ -1,4 +1,4 @@
-export const GAME_TITLE = 'Iwashidle'
+export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
 
 export const WIN_MESSAGES = ['上物の鰯!', '鰯が大漁だ!', '美味しそうな鰯だ!']
 export const GAME_COPIED_MESSAGE = 'クリップボードにコピーしました'
